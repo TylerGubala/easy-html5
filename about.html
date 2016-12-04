@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Easy HTML5 Chat - Code with friends!</title>
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+    </head>
+    <body>
+        <div id="header">
+            <h1>Easy HTML5 Chat - Code with friends!</h1>
+            <ul id="links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="app.html">Jump in</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact us</a></li>
+            </ul>
+        </div>
+        <div id="container">
+            <div class="info">
+                <h2>About</h2>
+                <p>This page contains information regarding different types of objects, methods and permissions utilized to make this application function.</p>
+                <h3>Privacy</h3>
+                <p>Chat lobby sessions are stateful. What this means is that after all users exit the lobby session or it is manually destroyed by the host, all information regarding that session is lost. Moreover, all information regarding to users and what sessions they are connected to is lost when a user disconnects from the server. This is all done in the interest of privacy. No data is retained because on the server end, users and lobbies only exist for the duration of their lifetime. For evidence of this, you may check the source, which is available on Github. If that is not satisfactory, please, by all means, set up your own mirror server! I would love to have multiple chat sites using this code. For more information, please check out this quick and dirty server setup guide.</p>
+                <h3>Updates</h3>
+                <p>With this project still being very much in its infancy, expect updates to be frequent for the time being. There are quite a few low hanging fruit currently, such as:</p>
+                <ul>
+                    <li>Creating the actual user interface</li>
+                    <li>Creating the server code</li>
+                    <li>Allowing different types of chat lobbies, including ones where users can create their own javascript functions and send them to one another.
+                        <ul>
+                            <li>Prior to doing that making sure that the server will not echo javascript functions to users unless it is configured that way, and making sure that user's application does not accept javascript unless configured that way. It will need to be a double validation, once on the server's end as it passes through, once on the client's end as it is recieved. If a client goes to turn on cross site scripting, <strong>warn them.</strong>.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <h3>Safety</h3>
+                <p>By default, when you create a lobby, or when a person enters an active lobby, that lobby server side enters a "text only" mode. What this means is that when a lobby is first opened, the only permissable data that may be sent is text. The text is inseted as plaintext inside of a div container element. This allows people to communicate in a safe environment when new users are added into the lobby. To elevate the client to HTML mode, a vote process must take place, where all users cast their elevation request. The server will send a message to those users that "&lt;Number_Of_Users_Voting&gt; out of &lt;Number_of_Users_In_Lobby&gt; are voting to elevate permissions to: HTML." If all users have voted to elevate the permissions, the vote passes and the server side settings are changed.</p>
+                <p>Even if the server is elevated to HTML send permissions, the users still won't be able to recieve HTML unless they change their client recieve HTML permissions to on. This is on a client-by-client basis, so there is no voting involved. Once the user has their client settings set, their browser will accept and append all incoming messages as HTML.</p>
+                <p>There is also a Cross-Site-Script mode, where users can send one another functions and they will be appended to the other user's browser and run. This is a dangerous mode, and is not reccommended except for in cases where you know all of the parties in the chat lobby have no mal intent. This once again requires another vote to be passed so that users can be made aware that a person is voting to elevate permissions to allow for script dispersal, and make the decision on whether or not they would like to be echoed scripts from the server. Even with this setting enabled, they will still need to have their client settings changed to allow for cross site scripts to be appended to thier client HTML document.</p>
+                <p>At any time a user can disable their client settings or simply leave the lobby. Don't stay in a lobby where untrusted code is going to be present, you are only putting yourself at greater risk of being hacked.</p>
+            </div>
+        </div>
+        <div id="footer">&copy; Tyler Gubala 2016</div>
+    </body>
+</html>

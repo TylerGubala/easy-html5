@@ -1,0 +1,1 @@
+ReactDOM.render(React.createElement(EasyHtml5ChatApp), document.getElementById('container'));
