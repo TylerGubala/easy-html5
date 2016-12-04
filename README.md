@@ -4,11 +4,17 @@ Easy HTML5 is a set of applications to solve non-trivial needs met by desktop ap
 The set of applications includes applications for:
 
 Chatting: Easy-Html5-Chat
+
 File Editing: Easy-Html5-File
+
 Drawing: Easy-Html5-Paint
+
 Audio Editing: Easy-Html5-Audio
+
 Video Editing: Easy-Html5-Video
+
 SVG Editing: Easy-Html5-SVG
+
 3d Editing: Easy-Html5-WebGL
 
 While some of these applications may cover topics that are advanced, the primary goal of these applications is to provide as complete of a cross-platform solution for handling common desktop tasks all while making it Easy for the user.
